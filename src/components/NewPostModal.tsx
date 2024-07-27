@@ -7,8 +7,8 @@ export default function NewPostFooter() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="fixed bottom-0 w-screen p-2 bg-white border-t">
-      <div className="flex justify-center">
+    <div className="">
+      <div className="">
         <button
           className="p-2 border rounded hover:text-blue-500"
           onClick={() => {

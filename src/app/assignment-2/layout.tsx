@@ -1,7 +1,7 @@
 import Link from "next/link";
-import { auth } from "../../../auth";
+import { auth, signOut } from "../../../auth";
 import { getPostMap } from "../../actions/api";
-import NewPostFooter from "../../components/NewPostFooter";
+import NewPostModal from "../../components/NewPostModal";
 import PostList from "../../components/PostList";
 
 export default async function assignment2({ children }) {
@@ -12,13 +12,28 @@ export default async function assignment2({ children }) {
 
   return (
     <div className="p-5 pb-20">
-      <div className="flex justify-between">
+      <div className="flex justify-between mr-10">
         <h1 className="text-xl font-bold">Second Assignment </h1>
 
+        <NewPostModal />
+
         {session?.user ? (
-          <h1 className="text-lg mr-10">Logged in as: <b>{session?.user?.name}</b></h1>
+          <div className="flex gap-2">
+            <h1 className="text-lg mr-10">
+              Logged-in: <b>{session?.user?.name}</b>
+            </h1>
+
+            <form
+              action={async () => {
+                "use server";
+                await signOut();
+              }}
+            >
+              <button type="submit">Sign Out</button>
+            </form>
+          </div>
         ) : (
-          <h1 className="text-lg mr-10">
+          <h1 className="text-lg">
             <Link className="hover:text-blue-500" href="/assignment-2/login">
               Log In
             </Link>
@@ -36,8 +51,6 @@ export default async function assignment2({ children }) {
           />
         );
       })}
-
-      <NewPostFooter />
 
       {children}
     </div>

@@ -24,7 +24,7 @@ export async function seed(knex: Knex): Promise<void> {
       value: 10,
       owner_id: 1,
       parent_post_id: null,
-      operand: 'A',
+      operand: null,
       input: 10,
     },
     {
