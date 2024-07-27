@@ -29,11 +29,13 @@ export default function CreatePostModal({
 
         <form
           action={(formData) => {
-            createPost(formData).finally(() => {
-              setIsOpen(false);
-
-              window.location.reload();
-            });
+            createPost(formData)
+              .then((res) => {
+                setIsOpen(false);
+              })
+              .catch((err) => {
+                console.error(err);
+              });
           }}
         >
           <input type="hidden" name="postId" value={postId} />
@@ -41,10 +43,10 @@ export default function CreatePostModal({
 
           {!isNew && (
             <div className="mt-4">
-              <label htmlFor="operand" className="pr-2">
+              <label htmlFor={`${postId}-operand`} className="pr-2">
                 Operation:
               </label>
-              <select id="operand" name="operand">
+              <select id={`${postId}-operand`} name="operand">
                 <option value="A">Addition (+)</option>
                 <option value="S">Subtraction (-)</option>
                 <option value="M">Multiplication (x)</option>
@@ -54,11 +56,11 @@ export default function CreatePostModal({
           )}
 
           <div className="mt-4">
-            <label htmlFor="inpnum" className="pr-2">
+            <label htmlFor={`${postId}-inpnum`} className="pr-2">
               Number:
             </label>
             <input
-              id="inpnum"
+              id={`${postId}-inpnum`}
               className="rounded-md border border-gray-200 py-2 pl-10 text-sm outline-2"
               type="number"
               name="inpNum"

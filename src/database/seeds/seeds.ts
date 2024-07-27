@@ -1,4 +1,5 @@
 import { Knex } from "knex";
+import bcrypt from 'bcrypt';
 
 export async function seed(knex: Knex): Promise<void> {
   await knex.raw(`TRUNCATE TABLE "user" RESTART IDENTITY CASCADE`);
@@ -6,12 +7,12 @@ export async function seed(knex: Knex): Promise<void> {
   await knex("user").insert([
     {
       username: "chami",
-      password: 'abc123',
+      password: await bcrypt.hash('abc123', 10),
       createdDate: new Date(),
     },
     {
       username: "shar",
-      password: 'abc123',
+      password: await bcrypt.hash('abc123', 10),
       createdDate: new Date(),
     },
   ]);
