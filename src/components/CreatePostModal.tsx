@@ -31,9 +31,10 @@ export default function CreatePostModal({
           action={(formData) => {
             createPost(formData).finally(() => {
               setIsOpen(false);
+
+              window.location.reload();
             });
           }}
-          className=""
         >
           <input type="hidden" name="postId" value={postId} />
           <input type="hidden" name="prevValue" value={value} />

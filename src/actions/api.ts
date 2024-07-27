@@ -20,20 +20,18 @@ export async function getPostMap() {
 
   for (let post of posts) {
     if (post.parent_post_id === null) {
-      postMap["0"].push(post.post_id);
+      postMap["0"].push(post);
     } else if (postMap[post.parent_post_id]) {
-      postMap[post.parent_post_id].push(post.post_id);
+      postMap[post.parent_post_id].push(post);
     } else {
-      postMap[post.parent_post_id] = [post.post_id];
+      postMap[post.parent_post_id] = [post];
     }
   }
 
-  return { posts, postMap };
+  return postMap;
 }
 
 export async function createPost(formData: FormData) {
-  // console.log("postData", formData);
-
   const postData = {
     value: formData.get('prevValue'),
     postId: formData.get('postId'),

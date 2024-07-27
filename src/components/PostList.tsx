@@ -1,8 +1,7 @@
 import Post from "./Post";
 
-export default function PostList({ postId, posts, postMap, depth }) {
-  const children = postMap[postId.toString()];
-  const post = posts.find((post) => post.post_id === postId);
+export default function PostList({ post, postMap, depth }) {
+  const children = postMap[post.post_id.toString()];
 
   return (
     <div>
@@ -10,11 +9,10 @@ export default function PostList({ postId, posts, postMap, depth }) {
 
       {children &&
         children.length > 0 &&
-        children.map((child) => (
+        children.map((childPost) => (
           <PostList
-            key={child}
-            postId={child}
-            posts={posts}
+            key={childPost.post_id}
+            post={childPost}
             postMap={postMap}
             depth={depth + 1}
           />
