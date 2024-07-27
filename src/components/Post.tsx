@@ -24,13 +24,10 @@ export default function Post({ post, depth }) {
     >
       <div className="p-2 text-center">
         <Image src={"/icons/user.png"} alt="User Image" height={50} width={50} />
-        <h2>{post.username}</h2>
+        <h2 className="mt-2">{post.username}</h2>
       </div>
 
       <div className="ml-10">
-        {/* <h4>Operand: {post.operand}</h4>
-        <h4>Input: {post.input}</h4> */}
-
         <h3 className="text-xl">{getOperationText(post.operand, post.input)}</h3>
         <h3 className="text-2xl font-bold">{post.value}</h3>
 

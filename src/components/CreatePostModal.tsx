@@ -15,7 +15,7 @@ export default function CreatePostModal({
     <div
       className={`${
         isOpen ? "flex" : "hidden"
-      } fixed top-0 left-0 h-screen w-screen bg-[#2f7bdf1a] z-50  flex justify-center items-center`}
+      } fixed top-0 left-0 h-screen w-screen bg-[#2f7bdf1a] z-20  flex justify-center items-center`}
     >
       <div className="bg-white relative p-4">
         <div
