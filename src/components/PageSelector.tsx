@@ -28,11 +28,15 @@ export default function PageSelector() {
     } else {
       setPageSelection(new Array(pages.length).fill(true));
     }
-  }
+  };
 
   return (
     <div className="w-[370px] px-[15px] py-[10px] border border-[#EEEEEE] rounded-[6px] shadow-[0_0_4px_0_rgba(14,14,14,0.1),0_8px_15px_0_rgba(14,14,14,0.12)]">
-      <LabeledCheckbox label="All Pages" checked={!pageSelection.some((selection) => !selection)} toggleChecked={toggleAll} />
+      <LabeledCheckbox
+        label="All Pages"
+        checked={!pageSelection.some((selection) => !selection)}
+        toggleChecked={toggleAll}
+      />
 
       <hr className="text-[#CDCDCD] my-[10px]" />
 
