@@ -5,8 +5,8 @@ import "./globals.css";
 const montserrat = Montserrat({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Taskina Assignments",
-  description: "Test Assignments given by Taskina",
+  title: "Num-Chat",
+  description: "Fun chat app where you do mathematics as chat",
 };
 
 export default function RootLayout({

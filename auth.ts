@@ -7,7 +7,7 @@ import bcrypt from "bcrypt";
 
 export const { auth, signIn, signOut, handlers } = NextAuth({
   pages: {
-    signIn: "/assignment-2/login",
+    signIn: "/num-chat/login",
   },
   providers: [
     Credentials({

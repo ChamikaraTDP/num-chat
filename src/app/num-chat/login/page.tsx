@@ -74,7 +74,7 @@ export default function Login() {
               Don&apos;t have an accout?
               <Link
                 className="hover:text-blue-500 ml-2"
-                href="/assignment-2/register"
+                href="/num-chat/register"
               >
                 Register
               </Link>

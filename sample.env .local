@@ -1,0 +1,7 @@
+
+DB_HOST=""
+DB_USER=""
+DB_PASSWORD=""
+DB_DATABASE=""
+NODE_CONFIG_ENV="dev"
+AUTH_SECRET="put your generated secret"

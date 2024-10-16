@@ -4,7 +4,7 @@ import { getPostMap } from "../../actions/api";
 import NewPostModal from "../../components/NewPostModal";
 import PostList from "../../components/PostList";
 
-export default async function assignment2({ children }) {
+export default async function chat({ children }) {
   const postMap = await getPostMap();
   const rootPosts = postMap["0"];
 
@@ -13,7 +13,7 @@ export default async function assignment2({ children }) {
   return (
     <div className="p-5 pb-20">
       <div className="flex justify-between mr-10">
-        <h1 className="text-xl font-bold">Second Assignment </h1>
+        <h1 className="text-xl font-bold">Number Chat</h1>
 
         <NewPostModal />
 
@@ -34,7 +34,7 @@ export default async function assignment2({ children }) {
           </div>
         ) : (
           <h1 className="text-lg">
-            <Link className="hover:text-blue-500" href="/assignment-2/login">
+            <Link className="hover:text-blue-500" href="/num-chat/login">
               Log In
             </Link>
           </h1>

@@ -53,7 +53,7 @@ export async function createUser(prevState: any, formData: FormData) {
       password: hashedPass,
     });
 
-    redirect("/assignment-2/login");
+    redirect("/num-chat/login");
   }
 
   return {
@@ -75,7 +75,7 @@ export async function authenticate(prevState: any, formData: FormData) {
     }
 
     if (isRedirectError(error)) {
-      redirect("/assignment-2");
+      redirect("/num-chat");
     }
 
     return { message: "Unknown error occured" };
@@ -106,7 +106,7 @@ export async function getPostMap() {
 export async function createPost(formData: FormData) {
   const session = await auth();
 
-  if (!session?.user) redirect("/assignment-2/login");
+  if (!session?.user) redirect("/num-chat/login");
 
   const postData = {
     value: formData.get("prevValue"),
@@ -131,5 +131,5 @@ export async function createPost(formData: FormData) {
   const knex = getKnex();
   await knex("post").insert(post);
 
-  redirect("/assignment-2");
+  redirect("/num-chat");
 }
