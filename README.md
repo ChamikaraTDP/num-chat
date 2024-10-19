@@ -1,8 +1,6 @@
 # Num-Chat
 
-    Fun chat app where you do mathematics as chat
-    Deep nested replies that changes the outcome
-
+### Fun chat app where you do mathematics as chat. Deep nested replies that changes the outcome
 
 Home page contains a simple page selector, something I created for a test. Use `Go to Chat` link go to chat page
 
